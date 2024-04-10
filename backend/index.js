@@ -2,6 +2,7 @@ const express = require("express")
 const sequelize = require("./db");
 const cors = require("cors");
 const {userRouter} = require("./routes/user.routes");
+const {PostRouter} = require("./routes/post.route")
 
 
 
@@ -13,7 +14,7 @@ app.get("/",(req,res)=>{
     res.send("Working fine")
 })
 app.use("/user", userRouter)
-
+app.use("/post", PostRouter)
 
 app.listen(2002,async()=>{
     try {
