@@ -39,4 +39,9 @@ This assignment involves creating a simple 2-page website using Node.js and a SQ
 - Add user's posts to database
 - Download all the posts of a particular user in an excel sheet
 
+## Some View
+ <img src="./frontend/assets/Screenshot (402).png">
 
+ <img src="./frontend/assets/Screenshot (403).png">
+
+ <img src="./frontend/assets/Screenshot (404).png">
