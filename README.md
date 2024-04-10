@@ -3,6 +3,8 @@
 This assignment involves creating a simple 2-page website using Node.js and a SQL database, adhering to specific business requirements such as fetching data from an API, displaying user information, and implementing CRUD functionality for users and posts.
 
 ## Deployed Links
+- [Backend Deployment Link](https://cointab-assignment-kko4.onrender.com)
+- [Frontend Deployment Link](https://cointab-assignment-five.vercel.app/)
 - Backend: [https://cointab-assignment-kko4.onrender.com]
 - Backend: [https://cointab-assignment-five.vercel.app/]
 
