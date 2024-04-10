@@ -5,7 +5,7 @@ const Excel = require("exceljs");
 
 const PostRouter = express.Router();
 
-PostRouter.post("/add",async(req,res)=>{
+PostRouter.post("/",async(req,res)=>{
     try{
         const newPost = await postModel.bulkCreate(req.body);
         console.log(newPost)
@@ -22,13 +22,15 @@ PostRouter.post("/add",async(req,res)=>{
 PostRouter.get("/", async(req,res)=>{
     try{
      let {userId} = req.query;
+     console.log(userId)
      let posts = await postModel.findAll({where:{userId}});
      let response = await axios(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`)
      response=response.data
      if(posts.length > 0){
         return  res.status(200).json({hasPosts:true,response})
-     }
+     }else{
      return res.status(200).json({hasPosts:false,response});
+     }
     }
     catch(err){
         console.log(err);
@@ -38,9 +40,9 @@ PostRouter.get("/", async(req,res)=>{
 })
 
 
-PostRouter.get("/download-excel", async(req,res)=>{
+PostRouter.get("/download-excel/:userId", async(req,res)=>{
     try{
-       const userId = req.query.userId
+       const userId = req.params;
        const posts = await postModel.findAll({where:{userId}});
        const workbook = new Excel.Workbook();
        const worksheet = workbook.addWorksheet("Posts");

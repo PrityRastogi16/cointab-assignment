@@ -1,6 +1,10 @@
 * {
     font-family: Arial, sans-serif;
     box-sizing: border-box;
+    
+}
+body{
+    background-color: #D9EDBF;
 }
 .heading{
    margin-left: 35%;
@@ -10,9 +14,12 @@
 }
 .card {
     border: 2px solid #3498db;
-    border-radius: 10px;
+    border-radius: 20px;
+    margin-left:  15%;
+    height: 5%;
+    width: 70%;
     padding: 20px;
-    margin: 20px;
+    margin-top: 20px;
     background-color: #f9f9f9;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;

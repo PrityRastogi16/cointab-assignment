@@ -51,6 +51,9 @@ function displayUser(users){
             actionBtn.textContent = "OPEN"
             actionBtn.classList.add("open-button")
             actionBtn.addEventListener("click",()=>{
+                localStorage.setItem("userId",user.id);
+                localStorage.setItem("username",user.name);
+                localStorage.setItem("company", user.company.name)
                 window.location.href="./post/post.html"
             })
         }else{
