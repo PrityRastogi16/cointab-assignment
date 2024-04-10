@@ -5,15 +5,15 @@ This assignment involves creating a simple 2-page website using Node.js and a SQ
 ## Deployed Links
 - [Backend Deployment Link](https://cointab-assignment-kko4.onrender.com)
 - [Frontend Deployment Link](https://cointab-assignment-five.vercel.app/)
-- Backend: [https://cointab-assignment-kko4.onrender.com]
-- Backend: [https://cointab-assignment-five.vercel.app/]
 
-## 
 
 ## Technologies Used
 - Node.js
 - Express.js
 - SQL
+- HTML
+- CSS
+- Javascript
 
 ## NPM Packages Used
 - axios
