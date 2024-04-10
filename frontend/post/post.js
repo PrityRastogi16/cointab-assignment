@@ -13,7 +13,7 @@ let container = document.getElementById("container");
 async function fetchData(){
     try {
         loadingBtn.style.display="block";
-        let response = await fetch(`http://localhost:2002/post?userId=${userId}`)
+        let response = await fetch(`https://cointab-assignment-kko4.onrender.com/post?userId=${userId}`)
         let data = await response.json();
         let posts = data.response;
         container.innerHTML = "";
@@ -31,7 +31,7 @@ async function fetchData(){
         
         downloadBtn.addEventListener("click",async ()=>{
             try {
-                const response = await fetch(`http://localhost:2002/post/download-excel/${userId}`);
+                const response = await fetch(`https://cointab-assignment-kko4.onrender.com/post/download-excel/${userId}`);
                 const blobData = await response.blob();
                 const blobURL = window.URL.createObjectURL(blobData);
                 const link = document.createElement('a');
@@ -79,7 +79,7 @@ function createCard(item){
 
 async function addInBulk(posts){
     try {
-        let res = await fetch(`http://localhost:2002/post`,{
+        let res = await fetch(`https://cointab-assignment-kko4.onrender.com/post`,{
             method:"POST",
             headers:{
                 "Content-Type": "application/json"

@@ -6,7 +6,7 @@ const container = document.getElementById("container");
 getBtn.addEventListener("click", async(req,res)=>{
    try{
     loadingBtn.style.display="block";
-    let response = await fetch(`http://localhost:2002/user/`);
+    let response = await fetch(`https://cointab-assignment-kko4.onrender.com/user/`);
     container.innerHTML=""
     // container.innerHTML='';
     const data = await response.json();
@@ -80,7 +80,7 @@ function displayUser(users){
 
 async function addData(user){
     try{
-      let res = await fetch(`http://localhost:2002/user/add`, {
+      let res = await fetch(`https://cointab-assignment-kko4.onrender.com/user/add`, {
         method: "POST",
         headers:{
             "Content-Type":"application/json",
@@ -92,7 +92,7 @@ async function addData(user){
       })
       let data = await res.json();
       console.log(data);
-      let updatedResponse = await fetch(`http://localhost:2002/user/`);
+      let updatedResponse = await fetch(`https://cointab-assignment-kko4.onrender.com/user/`);
       let updatedData = await updatedResponse.json();
       displayUser(updatedData);
     } catch (error) {
