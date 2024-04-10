@@ -1,6 +1,6 @@
-# cointab-assignment
+# Cointab-Assignment
 
-This assignment involves creating a simple 2-page website using Node.js and a SQL database, adhering to specific business requirements such as fetching data from an API, displaying user information, and implementing CRUD functionality for users and posts.
+This assignment involves creating a simple 2-page website using Node.js and a SQL database, adhering to specific business requirements such as fetching data from an API, displaying user information, save the user posts and generate an excel file containing all the user's posts.
 
 ## Deployed Links
 - [Backend Deployment Link](https://cointab-assignment-kko4.onrender.com)
