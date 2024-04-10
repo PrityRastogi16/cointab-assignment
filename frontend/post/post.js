@@ -1,6 +1,7 @@
 let userId = localStorage.getItem("userId");
 let username = localStorage.getItem("username");
 let company = localStorage.getItem("company");
+const loadingBtn = document.getElementById("loadingg");
 
 let userName = document.getElementById("username");
 userName.innerText=username
@@ -11,6 +12,7 @@ let container = document.getElementById("container");
 
 async function fetchData(){
     try {
+        loadingBtn.style.display="block";
         let response = await fetch(`http://localhost:2002/post?userId=${userId}`)
         let data = await response.json();
         let posts = data.response;
@@ -56,6 +58,9 @@ async function fetchData(){
     } catch (error) {
         console.log(error);
     }
+    finally{
+        loadingBtn.style.display="none";
+      }
 }
 fetchData();
 function createCard(item){
@@ -66,7 +71,7 @@ function createCard(item){
     title.innerText=`Title: ${item.title}`
 
     let body = document.createElement("p")
-    body.innerText=`Body: ${item.body}`
+    body.innerText=`Content: ${item.body}`
 
     card.append(title,body)
     return card;

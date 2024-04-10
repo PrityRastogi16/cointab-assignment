@@ -1,10 +1,14 @@
 const getBtn = document.getElementById("get-btn");
+const loadingBtn = document.getElementById("loadingg");
 const container = document.getElementById("container");
 // let url = "http://localhost:2002"
 
 getBtn.addEventListener("click", async(req,res)=>{
    try{
+    loadingBtn.style.display="block";
     let response = await fetch(`http://localhost:2002/user/`);
+    container.innerHTML=""
+    // container.innerHTML='';
     const data = await response.json();
     displayUser(data);
 
@@ -12,6 +16,9 @@ getBtn.addEventListener("click", async(req,res)=>{
    catch (error) {
     console.error(error);
 }
+  finally{
+    loadingBtn.style.display="none";
+  }
 })
 
 function displayUser(users){

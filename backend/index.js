@@ -18,6 +18,7 @@ app.use("/post", PostRouter)
 
 app.listen(2002,async()=>{
     try {
+        console.log("gdfgfg")
         await sequelize.authenticate();
         console.log("Connected to DB")
         console.log("Server is running on port 2002")

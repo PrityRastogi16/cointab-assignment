@@ -52,19 +52,21 @@ h1 {
     font-size: 20px;
     color: #333;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .card p {
     color: #666;
     font-size: 18px;
     font-style: italic;
+    text-align: center;
 }
 
 button {
     background-color: #4CAF50;
     color: white;
     font-size: 20px;
-    margin-left: 42%;
+    margin-left: 45%;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;

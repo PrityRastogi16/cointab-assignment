@@ -42,7 +42,8 @@ PostRouter.get("/", async(req,res)=>{
 
 PostRouter.get("/download-excel/:userId", async(req,res)=>{
     try{
-       const userId = req.params;
+       const {userId} = req.params;
+       console.log(userId)
        const posts = await postModel.findAll({where:{userId}});
        const workbook = new Excel.Workbook();
        const worksheet = workbook.addWorksheet("Posts");
