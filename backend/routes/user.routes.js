@@ -45,4 +45,108 @@ userRouter.get("/", async(req,res)=>{
     }
 })
 
+
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     User:
+ *       type: object
+ *       properties:
+ *         id:
+ *           type: integer
+ *           description: The user's ID.
+ *         name:
+ *           type: string
+ *           description: The user's name.
+ *         email:
+ *           type: string
+ *           description: The user's email.
+ *         city:
+ *           type: string
+ *           description: The user's city.
+ *         phone:
+ *           type: string
+ *           description: The user's phone number.
+ *         website:
+ *           type: string
+ *           description: The user's website.
+ *         company:
+ *           type: object
+ *           properties:
+ *             name:
+ *               type: string
+ *               description: The company's name.
+ *             catchPhrase:
+ *               type: string
+ *               description: The company's catchphrase.
+ *             bs:
+ *               type: string
+ *               description: The company's business strategy.
+ *       example:
+ *         id: 1
+ *         name: John Doe
+ *         email: john.doe@example.com
+ *         city: New York
+ *         phone: 123-456-7890
+ *         website: example.com
+ *         company:
+ *           name: Company ABC
+ *           catchPhrase: Lorem ipsum dolor sit amet
+ *           bs: Lorem ipsum
+ */
+
+/**
+ * @swagger
+ * tags:
+ *   name: Users
+ *   description: API endpoints for managing users
+ */
+
+/**
+ * @swagger
+ * /user/add:
+ *   post:
+ *     summary: Add a new user
+ *     tags: [Users]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/User'
+ *     responses:
+ *       '200':
+ *         description: User added successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/User'
+ *       '400':
+ *         description: Bad request
+ *       '500':
+ *         description: Internal server error
+ */
+
+/**
+ * @swagger
+ * /user:
+ *   get:
+ *     summary: Get all users with presence indicator
+ *     tags: [Users]
+ *     responses:
+ *       '200':
+ *         description: List of users with presence indicator
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/User'
+ *       '500':
+ *         description: Internal server error
+ */
+
+
 module.exports = {userRouter}

@@ -72,6 +72,122 @@ PostRouter.get("/download-excel/:userId", async(req,res)=>{
     }
 })
 
+/**
+ * @swagger
+ * tags:
+ *   name: Posts
+ *   description: Operations related to posts
+ */
+
+/**
+ * @swagger
+ * /post:
+ *   post:
+ *     summary: Create new post(s)
+ *     tags: [Posts]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: array
+ *             items:
+ *               $ref: '#/components/schemas/Post'
+ *     responses:
+ *       '201':
+ *         description: Created post(s) object
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Post'
+ *       '400':
+ *         description: Bad request
+ *       '500':
+ *         description: Internal server error
+ */
+
+/**
+ * @swagger
+ * /post:
+ *   get:
+ *     summary: Get posts by user ID
+ *     tags: [Posts]
+ *     parameters:
+ *       - in: query
+ *         name: userId
+ *         schema:
+ *           type: integer
+ *         required: true
+ *         description: ID of the user to retrieve posts for
+ *     responses:
+ *       '200':
+ *         description: A list of posts
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 hasPosts:
+ *                   type: boolean
+ *                 response:
+ *                   type: array
+ *                   items:
+ *                     $ref: '#/components/schemas/Post'
+ *       '500':
+ *         description: Internal server error
+ */
+
+/**
+ * @swagger
+ * /post/download-excel/{userId}:
+ *   get:
+ *     summary: Download posts in Excel format by user ID
+ *     tags: [Posts]
+ *     parameters:
+ *       - in: path
+ *         name: userId
+ *         schema:
+ *           type: integer
+ *         required: true
+ *         description: ID of the user to download posts for
+ *     responses:
+ *       '200':
+ *         description: Excel file downloaded successfully
+ *         content:
+ *           application/vnd.openxmlformats-officedocument.spreadsheetml.sheet:
+ *             schema:
+ *               type: string
+ *               format: binary
+ *       '500':
+ *         description: Internal server error
+ */
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     Post:
+ *       type: object
+ *       properties:
+ *         id:
+ *           type: integer
+ *         userId:
+ *           type: integer
+ *         title:
+ *           type: string
+ *         body:
+ *           type: string
+ *       required:
+ *         - id
+ *         - userId
+ *         - title
+ *         - body
+ */
+
+
+
 module.exports = {
     PostRouter
 }

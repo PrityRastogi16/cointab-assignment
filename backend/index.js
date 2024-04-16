@@ -3,10 +3,30 @@ const sequelize = require("./db");
 const cors = require("cors");
 const {userRouter} = require("./routes/user.routes");
 const {PostRouter} = require("./routes/post.route")
-
-
-
+const swaggerUI= require("swagger-ui-express")
+const swaggerJsDoc = require("swagger-jsdoc")
 const app = express();
+const options = {
+    definition:{
+        openapi:"3.0.0",
+        info:{
+            title:"Cointab Assignment",
+            version:"1.0.0",
+        },
+        servers:[
+            {url:"http://localhost:2002"},
+            {url:"https://cointab-assignment-kko4.onrender.com"},
+            
+        ]
+    },
+    apis:[
+        "./routes/*.js"
+    ]
+
+}
+const openAPI = swaggerJsDoc(options);
+app.use("/swagger",swaggerUI.serve,swaggerUI.setup(openAPI));
+
 app.use(cors())
 app.use(express.json())
 
