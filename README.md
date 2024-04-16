@@ -5,6 +5,7 @@ This assignment involves creating a simple 2-page website using Node.js and a SQ
 ## Deployed Links
 - [Backend Deployment Link](https://cointab-assignment-kko4.onrender.com)
 - [Frontend Deployment Link](https://cointab-assignment-five.vercel.app/)
+- [Swagger documentation](https://cointab-assignment-kko4.onrender.com/swagger/)
 
 
 ## Technologies Used
